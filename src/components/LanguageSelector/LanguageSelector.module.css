@@ -1,0 +1,93 @@
+.container {
+    position: relative;
+}
+
+.trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 120ms ease;
+}
+
+.trigger:hover {
+    background-color: var(--bg-hover);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.label {
+    line-height: 1;
+}
+
+.chevron {
+    color: var(--text-dim);
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 180px;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: slideUpFade 150ms ease-out;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 12px;
+    color: var(--text-muted);
+    font-size: 13px;
+    transition: background-color 120ms ease, color 120ms ease;
+    border-radius: 4px;
+    margin: 0 4px;
+    width: calc(100% - 8px);
+}
+
+.item:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.item.active {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+.itemLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detectedBadge {
+    font-size: 10px;
+    color: var(--accent);
+    background-color: var(--accent-dim);
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+}

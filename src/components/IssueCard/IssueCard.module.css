@@ -1,0 +1,132 @@
+.card {
+    position: relative;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    transition: border-color 120ms ease;
+    overflow: hidden;
+
+    /* Entrance animation preset */
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+.card.mounted {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 240ms cubic-bezier(0.16, 1, 0.3, 1), transform 240ms cubic-bezier(0.16, 1, 0.3, 1), border-color 120ms ease;
+}
+
+.card:hover {
+    border-color: var(--border);
+}
+
+.indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+}
+
+.sevCritical {
+    background-color: var(--red);
+}
+
+.sevWarning {
+    background-color: var(--accent);
+}
+
+.sevInfo {
+    background-color: rgba(61, 220, 132, 0.5);
+}
+
+.header {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.title {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.lineBadge {
+    position: relative;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+    background-color: var(--bg-elevated);
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: default;
+}
+
+/* CSS Tooltip on LineBadge */
+.lineBadge::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+    background-color: var(--text-primary);
+    color: var(--bg-base);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 150ms ease, transform 150ms ease;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.card:hover .lineBadge::after,
+.lineBadge:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.description {
+    margin: 6px 0 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.suggestionSection {
+    margin-top: 12px;
+}
+
+.suggestionBtn {
+    font-size: 11px;
+    color: var(--text-dim);
+    transition: color 150ms ease;
+}
+
+.suggestionBtn:hover {
+    color: var(--text-primary);
+}
+
+.suggestionCode {
+    margin-top: 8px;
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    color: var(--green);
+    white-space: pre-wrap;
+}

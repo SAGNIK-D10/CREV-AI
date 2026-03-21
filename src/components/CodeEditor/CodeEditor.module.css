@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface);
+    flex-shrink: 0;
+}
+
+.label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lineCount {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+}
+
+.clearBtn {
+    font-size: 11px;
+    color: var(--text-muted);
+    transition: color 150ms ease;
+}
+
+.clearBtn:hover {
+    color: var(--text-primary);
+}
+
+.editorWrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fix Monaco's line numbers column style via global overrides that affect child editor instances */
+:global(.monaco-editor .margin) {
+    background-color: var(--bg-surface) !important;
+    border-right: 1px solid var(--border-subtle) !important;
+}
+
+.highlightedLine {
+    background-color: rgba(232, 197, 71, 0.08) !important;
+}
