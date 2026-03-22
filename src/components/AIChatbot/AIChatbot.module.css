@@ -58,6 +58,14 @@
     gap: 8px;
 }
 
+.botAvatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: transparent;
+}
+
 .statusPill {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
@@ -245,11 +253,31 @@
 .fabTrigger {
     position: relative;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
 
 .fabTrigger:hover {
-    transform: scale(1.08);
+    transform: scale(1.12);
+}
+
+.fabImage {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+}
+
+.fabImage:hover {
+    filter: drop-shadow(0 4px 20px rgba(59, 130, 246, 0.5));
 }
 
 /* ── Welcome ───────────────────────────── */
@@ -259,7 +287,28 @@
     padding: 24px 16px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 6px;
+}
+
+.welcomeAvatar {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .welcomeMessage h3 {

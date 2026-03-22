@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import AiOrb from './AiOrb';
 import { sendToGemini } from './useGemini';
 import styles from './AIChatbot.module.css';
+import botImage from '../../assets/bot.png';
 
 const SUGGESTIONS = [
     'How do I prevent SQL injection?',
@@ -68,7 +69,8 @@ export default function AIChatbot() {
                     {/* Header */}
                     <div className={styles.chatHeader}>
                         <div className={styles.chatTitle}>
-                            ◆ CREV AI
+                            <img src={botImage} alt="Bot Avatar" className={styles.botAvatar} />
+                            CREV AI
                             <span className={styles.statusPill}>Online</span>
                         </div>
                         <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>✕</button>
@@ -79,6 +81,7 @@ export default function AIChatbot() {
                         {messages.length === 0 && (
                             <>
                                 <div className={styles.welcomeMessage}>
+                                    <img src={botImage} alt="Welcome Bot" className={styles.welcomeAvatar} />
                                     <h3>Hey there 👋</h3>
                                     <p>I'm CREV AI — your code review companion. Ask me anything about code quality, security, or best practices.</p>
                                 </div>
@@ -133,9 +136,9 @@ export default function AIChatbot() {
                 </div>
             )}
 
-            {/* 3D Orb Trigger */}
+            {/* Bot Image Trigger */}
             <div className={styles.fabTrigger} onClick={() => setIsOpen(!isOpen)}>
-                <AiOrb isThinking={isThinking} />
+                <img src={botImage} alt="Chat Bot" className={styles.fabImage} />
             </div>
         </div>
     );

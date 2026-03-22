@@ -47,7 +47,7 @@ export default function Sidebar() {
 
         <div className={styles.userSection}>
           <div className={styles.avatar}>SD</div>
-          <span className={styles.username}>sayantandas</span>
+          <span className={styles.username}>sagnik</span>
           <span className={styles.statusDot}></span>
         </div>
       </div>
